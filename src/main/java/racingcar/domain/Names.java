@@ -1,5 +1,9 @@
 package racingcar.domain;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+
 public class Names {
     public static final int MIN_NAME_LENGTH = 1;
     public static final int MAX_NAME_LENGTH = 5;
@@ -19,7 +23,14 @@ public class Names {
         }
     }
 
+
+
+
     public String nameTrim(String value) {
         return value.trim();
+    }
+
+    public String getValue() {
+        return value;
     }
 }

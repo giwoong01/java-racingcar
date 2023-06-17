@@ -6,6 +6,10 @@ public class Car {
     private final Names name;
     private int position;
 
+    public Car(Names name) {
+        this.name = name;
+    }
+
     public Car(Names name, int position) {
         this.name = name;
         this.position = position;
@@ -16,6 +20,18 @@ public class Car {
         if (number >= MOVE_LOWER_BOUND_INCLUSIVE) {
             position++;
         }
+    }
+
+    public String getStateMessage() {
+        StringBuilder stringBuilder = new StringBuilder(String.format("%s : ", name.getValue()));
+        for (int i = 0; i < position; i++) {
+            stringBuilder.append("-");
+        }
+        return stringBuilder.toString();
+    }
+
+    public boolean isSamePosition(int maxPosition) {
+        return position >= maxPosition;
     }
 
     public int getPosition() {
